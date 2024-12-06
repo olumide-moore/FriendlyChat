@@ -9,14 +9,7 @@ import {
   getAuth,
   User,
 } from '@angular/fire/auth';
-import {
-  map,
-  switchMap,
-  firstValueFrom,
-  filter,
-  Observable,
-  Subscription,
-} from 'rxjs';
+import { map, switchMap, firstValueFrom, filter, Observable, Subscription } from 'rxjs';
 import {
   doc,
   docData,
@@ -48,13 +41,14 @@ import { getToken, Messaging, onMessage } from '@angular/fire/messaging';
 import { Router } from '@angular/router';
 
 type ChatMessage = {
-  name: string | null;
-  profilePicUrl: string | null;
-  timestamp: FieldValue;
-  uid: string | null;
-  text?: string;
-  imageUrl?: string;
+  name: string | null,
+  profilePicUrl: string | null,
+  timestamp: FieldValue,
+  uid: string | null,
+  text?: string,
+  imageUrl?: string
 };
+
 
 @Injectable({
   providedIn: 'root',
@@ -72,10 +66,10 @@ export class ChatService {
   user$ = user(this.auth);
   currentUser: User | null = this.auth.currentUser;
   userSubscription: Subscription;
-
+  
   constructor() {
     this.userSubscription = this.user$.subscribe((aUser: User | null) => {
-      this.currentUser = aUser;
+        this.currentUser = aUser;
     });
   }
 
