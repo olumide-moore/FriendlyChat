@@ -7,7 +7,7 @@
   "hosting": [
     {
       "target": "friendlychat",
-      "public": "dist/my-web-app",
+      "public": "dist/friendlychat",
       "ignore": [
         "firebase.json",
         "**/.*",
